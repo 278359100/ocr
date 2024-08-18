@@ -1,5 +1,5 @@
 
-![image](pic/5.png) # 
+![image](pic/5.png) 
 
 support service and client to "Parse the text in OCR using the server-client mode.
 Multi-threading is specifically used to inject images. Because this introduced OCR library needs to be called in this way to enable multiple calls.
