@@ -1,6 +1,5 @@
 # support service and client to 
-![5](C:\python\ocr_thread\ocr\pic\5.png) "Parse the text in OCR using the server-client mode.
-
+![image](pic/5.png) "Parse the text in OCR using the server-client mode.
 Multi-threading is specifically used to inject images. Because this introduced OCR library needs to be called in this way to enable multiple calls.
 
 To solve the problem of multiple calls. Create a thread-safe queue to store image paths and results.
