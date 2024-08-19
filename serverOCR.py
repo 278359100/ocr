@@ -6,11 +6,11 @@ import time
 import os
 from queue import Queue
 from wechat_ocr.ocr_manager import OcrManager, OCR_MAX_TASK_ID
-
-wechat_ocr_dir = r"C:\Users\Sam\AppData\Roaming\Tencent\WeChat\XPlugin\Plugins\WeChatOCR\7079\extracted\WeChatOCR.exe"
-wechat_dir = r"C:\Program Files\Tencent\WeChat\[3.9.11.25]"
-OUTPUT_SUFFIX = "8-11.json"
-TARGET_TEXT = "操作失败，请稍后重试"
+from config import WECHAT_OCR_DIR, WECHAT_DIR, TARGET_TEXT,OUTPUT_SUFFIX
+#wechat_ocr_dir = r"C:\Users\Sam\AppData\Roaming\Tencent\WeChat\XPlugin\Plugins\WeChatOCR\7079\extracted\WeChatOCR.exe"
+#wechat_dir = r"C:\Program Files\Tencent\WeChat\[3.9.11.25]"
+#OUTPUT_SUFFIX = "8-11.json"
+#TARGET_TEXT = "操作失败，请稍后重试"
 image_paths = Queue()
 ocr_results = Queue()
 # 创建一个全局的 OcrManager 实例
@@ -88,9 +88,9 @@ def process_single_image(img_path):
 
 if __name__ == "__main__":
     # 初始化 OcrManager 并启动 WeChatOCR
-    ocr_manager = OcrManager(wechat_dir)
-    ocr_manager.SetExePath(wechat_ocr_dir)
-    ocr_manager.SetUsrLibDir(wechat_dir)
+    ocr_manager = OcrManager(WECHAT_DIR)
+    ocr_manager.SetExePath(WECHAT_OCR_DIR)
+    ocr_manager.SetUsrLibDir(WECHAT_DIR)
     ocr_manager.SetOcrResultCallback(ocr_result_callback)
     ocr_manager.StartWeChatOCR()
     # 启动服务器
