@@ -20,7 +20,14 @@ image_path, next_pic = image_paths.get(PLATFORM, [None, None])
 
 # OCR failure message image and delay settings
 failed_image = 'failedImage.png'
+
 delay = 2
+
+min_delay = 2        # 最小延迟时间为2秒
+max_delay = 100      # 最大延迟时间为10分钟（600秒）
+delay = random.uniform(min_delay, max_delay)
+
+
 scroll_time = 30
 wait_time = 10 * 60 * 60
 
