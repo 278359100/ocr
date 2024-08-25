@@ -56,8 +56,8 @@ def random_scroll_and_click(image):
     my_array = [random.randint(-350, -100) for _ in range(scroll_time)]
     for i, scroll_amount in enumerate(my_array):
         try:
-            pyautogui.scroll(scroll_amount)
             time.sleep(delay)
+            pyautogui.scroll(scroll_amount)
             if locate_and_click(image):
                 return True
         except Exception as e:
